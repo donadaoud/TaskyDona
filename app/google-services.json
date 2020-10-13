@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "214933032419",
+    "firebase_url": "https://taskydona.firebaseio.com",
+    "project_id": "taskydona",
+    "storage_bucket": "taskydona.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:214933032419:android:5e073d7328f980dcb724d6",
+        "android_client_info": {
+          "package_name": "daoud.dona.taskydona"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "214933032419-goj96gvi6f5hhkt5dc0vm2nuq2u783h0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA4aF2l-nmiQXswol4v_1kQue0vXnbWafo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "214933032419-goj96gvi6f5hhkt5dc0vm2nuq2u783h0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
