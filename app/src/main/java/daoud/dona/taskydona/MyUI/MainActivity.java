@@ -1,10 +1,12 @@
-package daoud.dona.taskydona;
+package daoud.dona.taskydona.MyUI;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
+
+import daoud.dona.taskydona.R;
 
 public class MainActivity extends AppCompatActivity {
     @Override

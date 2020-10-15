@@ -1,10 +1,12 @@
-package daoud.dona.taskydona;
+package daoud.dona.taskydona.MyUI;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
+
+import daoud.dona.taskydona.R;
 
 public class SignUpActivity extends AppCompatActivity {
 
@@ -28,8 +30,11 @@ public class SignUpActivity extends AppCompatActivity {
         btnSave = findViewById(R.id.btnSave);
     }
 
-    ////////// 4.
-    private void checkForm() // hal habbahin sa7?
+
+    private void checkForm()
+    /**
+     * the method checks if the (index) data is true and comfirmed
+     */
     {
         String fName = etFirstName.getText().toString();
         String lName = etLastName.getText().toString();
@@ -50,6 +55,8 @@ public class SignUpActivity extends AppCompatActivity {
             isOK=false;
             etEmail.setError("Wrong E-mail Adress. Try Again!");
         }
+
+
 
     }
 }
