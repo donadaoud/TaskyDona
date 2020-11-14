@@ -20,11 +20,11 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class Add_Task extends AppCompatActivity {
     //2.
-    private EditText etTitle, etSubject, etDueDate;
-    private TextView tvImportant, tvNeccesary;
-    private SeekBar skbrNeccesary, skbrImportant;
-    private Button btnSaveTask, btnUpload, btnDatePicker;
-    private ImageButton imgBtn;
+    protected EditText etTitle, etSubject, etDueDate;
+    protected TextView tvImportant, tvNeccesary;
+    protected SeekBar skbrNeccesary, skbrImportant;
+    protected Button btnSaveTask, btnUpload, btnDatePicker;
+    protected ImageButton imgBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
