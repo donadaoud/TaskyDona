@@ -1,13 +1,21 @@
 package daoud.dona.taskydona.MyUI;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import daoud.dona.taskydona.MyUtils.MyValidations;
 import daoud.dona.taskydona.R;
@@ -32,6 +40,7 @@ public class SignUpActivity extends AppCompatActivity {
         etPassword1 = findViewById(R.id.etPassword1);
         etPassword2 = findViewById(R.id.etPassword2);
         btnSave = findViewById(R.id.btnSave);
+        //4
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -39,11 +48,8 @@ public class SignUpActivity extends AppCompatActivity {
             }
 
         });
+
     }
-
-
-
-
 
     private void validateForm()
     /**
@@ -57,24 +63,20 @@ public class SignUpActivity extends AppCompatActivity {
         String pass1 = etPassword1.getText().toString();
         String pass2 = etPassword2.getText().toString();
         String saveBtn = btnSave.getText().toString();
-        boolean isOK= true;
-        if(fName.length()<2)
-        {
-            isOK=false;
+        boolean isOK = true;
+        if (fName.length() < 2) {
+            isOK = false;
             etFirstName.setError("At least two letters");
         }
-        if (email.length()<5||(email.indexOf('@')==0)||email.indexOf('@')>=email.length()-2|| email.indexOf('.')==0
-        ||email.indexOf('.')>=email.length()-1||email.indexOf('.')<email.indexOf('@'))
-        {
-            isOK=false;
+        if (email.length() < 5 || (email.indexOf('@') == 0) || email.indexOf('@') >= email.length() - 2 || email.indexOf('.') == 0
+                || email.indexOf('.') >= email.length() - 1 || email.indexOf('.') < email.indexOf('@')) {
+            isOK = false;
             etEmail.setError("Wrong E-mail Adress. Try Again!");
         }
-        if (!pass1.equals(pass2))
-        {
-            isOK=false;
+        if (!pass1.equals(pass2)) {
+            isOK = false;
             etPassword2.setError("Passwords must be the same!");
-        }
-        else {
+        } else {
             MyValidations myValidations = new MyValidations();
             if (myValidations.validatePasword(pass1) == false) {
                 isOK = false;
@@ -86,27 +88,43 @@ public class SignUpActivity extends AppCompatActivity {
             /**
              * todo create account and return to sign in screen/ close this screen if successeded
              */
-            createNewAccount(email,pass1, pass2,fName,lName,phone);
+            createNewAccount(email, pass1, pass2, fName, lName, phone);
         }
-
 
 
     }
 
     /**
-     *
-      * @param email
+     * @param email
      * @param pass1
      * @param pass2
      * @param fName
      * @param lName
      * @param phone
      */
-    private void createNewAccount(String email, String pass1, String pass2, String fName, String lName, String phone)
-    {
-        FirebaseAuth auth=FirebaseAuth.getInstance(); // אחראית על רישום וכניסת משתמשים
+    private void createNewAccount(String email, String pass1, String pass2, String fName, String lName, String phone) {
+        FirebaseAuth auth = FirebaseAuth.getInstance(); // אחראית על רישום וכניסת משתמשים
+        //2
+        OnCompleteListener<AuthResult> listener = new OnCompleteListener<AuthResult>() {
+
+            //RESPONS جواب
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if (task.isSuccessful()) {
+                    Toast.makeText(SignUpActivity.this, "Successfuly Signing up", Toast.LENGTH_SHORT).show();
+                    finish();
+                } else {
+                    Toast.makeText(SignUpActivity.this, "Signing up, Failed" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                    etEmail.setError("Signing up, Failed" + task.getException().getMessage());
+                }
+
+            }
+        };
+        //3
+        auth.createUserWithEmailAndPassword(email, pass1).addOnCompleteListener(listener);
     }
 }
+
 
 
 

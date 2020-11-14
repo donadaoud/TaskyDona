@@ -3,14 +3,15 @@
     package="daoud.dona.taskydona">
 
     <application
-        android:allowBackup="true"
+        android:allowBackup=" "
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".Add_Task"></activity>
-        <activity android:name=".MyUI.SignUp2" />
+        android:theme="@style/AppTheme"
+        android:fullBackupContent="">
+        <activity android:name=".Add_Task" />
+        <activity android:name=".MyUI.logInActivity" />
         <activity android:name=".MyUI.SignUpActivity" />
         <activity android:name=".MyUI.MainActivity">
             <intent-filter>
