@@ -14,4 +14,11 @@ tools:context=".MyUI.MainActivity">
         tools:layout_editor_absoluteX="324dp"
         tools:layout_editor_absoluteY="648dp"
         tools:ignore="MissingConstraints" />
+
+    <ListView
+        android:id="@+id/lstTask"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="150dp"
+        tools:layout_editor_absoluteY="272dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
