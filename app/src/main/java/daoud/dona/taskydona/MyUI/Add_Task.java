@@ -1,4 +1,4 @@
-package daoud.dona.taskydona;
+package daoud.dona.taskydona.MyUI;
 //1 xml
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,6 +17,9 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
+import daoud.dona.taskydona.Data.MyTask;
+import daoud.dona.taskydona.R;
 
 public class Add_Task extends AppCompatActivity {
     //2.

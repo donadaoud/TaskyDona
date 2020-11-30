@@ -1,4 +1,4 @@
-package daoud.dona.taskydona;
+package daoud.dona.taskydona.Data;
 
 public class MyTask {
     private String key; //id

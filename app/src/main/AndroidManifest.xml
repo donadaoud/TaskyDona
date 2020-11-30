@@ -11,7 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".itemTaskView"></activity>
-        <activity android:name=".Add_Task" />
+        <activity android:name=".MyUI.Add_Task" />
         <activity android:name=".MyUI.logInActivity" />
         <activity android:name=".MyUI.SignUpActivity" />
         <activity android:name=".MyUI.MainActivity">
