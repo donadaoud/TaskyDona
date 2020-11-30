@@ -39,7 +39,7 @@ public class MyTaskAdapter extends ArrayAdapter<MyTask>{
         //3.1
         View v = LayoutInflater.from(getContext()).inflate(R.layout.activity_item_task_view, parent, false);
         //3.2 find view by ID
-        TextView tvTitle = v.findViewById(R.id.itmTvTittle);
+        TextView tvTitle = v.findViewById(R.id.itmTvTittle3);
         TextView tvImportant = v.findViewById(R.id.itmTvImportant);
         TextView tvNecessary = v.findViewById(R.id.itmTvNecessary);
         TextView tvSubject = v.findViewById(R.id.itmTvSubject);
