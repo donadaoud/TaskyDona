@@ -49,7 +49,7 @@ public class Add_Task extends AppCompatActivity {
             }
         });
         //5
-
+    }
         public void validateForm () {
             String title = etTitle.getText().toString();
             String subject = etSubject.getText().toString();
@@ -72,7 +72,7 @@ public class Add_Task extends AppCompatActivity {
                 //6.2
                 saveTask(myTask);
             } }
-    }
+
 
     //6.3 دالة لحفظ البيانات في الغيمة (firebase database)
     private void saveTask(MyTask myTask) {
