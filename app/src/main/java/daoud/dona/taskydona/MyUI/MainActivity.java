@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
         //3.
         lstTask=findViewById(R.id.lstTask);
         //4.
-        taskAdapter=new MyTaskAdapter(getBaseContext(),R.layout.activity_item_task_view);
+        taskAdapter=new MyTaskAdapter(getBaseContext(),R.layout.item_task_view);
         //5. connect listview to the adaptor
         lstTask.setAdapter(taskAdapter);
         //7
