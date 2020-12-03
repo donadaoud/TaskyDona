@@ -50,7 +50,7 @@ public class MyTaskAdapter extends ArrayAdapter<MyTask>{
         //3.3 get the soutable task object
         final MyTask task = getItem(position);
         //3.4 connect the dot to the view (view the data using item views)
-        tvTitle.setText(task.getTitle());
+        //tvTitle.setText(task.getTitle());
         tvSubject.setText(task.getSub());
         switch (task.getImportant()) {
             case 5:
